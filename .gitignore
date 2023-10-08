@@ -1,0 +1,7 @@
+**/__pycache__
+gpro.egg-info
+env/gpro_env.tar.gz
+
+quickstart/checkpoints/
+quickstart/extdata/*.pt
+quickstart/extdata/vocab.json
