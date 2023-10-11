@@ -17,9 +17,8 @@ Here, we introduce GPro (Generative approaches in promoter design), a user-frien
 5. [Demos](https://github.com/WangLabTHU/Gpro_2023/wiki/5.-Demos)
 6. [Session Information](https://github.com/WangLabTHU/Gpro_2023/wiki/6.-Session-Information)
 
-to install this package:
-~~~shell
-pip install --user -e .
-~~~
-
+## Installation and details
 Please view [wiki](https://github.com/WangLabTHU/Gpro_2023/wiki) for detailed guidance.
+
+## License
+GPL-3
