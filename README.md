@@ -23,3 +23,5 @@ Please view [wiki](https://github.com/WangLabTHU/Gpro_2023/wiki) for detailed gu
 
 ## License
 GPL-3
+
+## Citation
