@@ -1,9 +1,11 @@
+import os, sys
 import torch
 import random
 import numpy as np
 import pandas as pd
 import torchvision.transforms as transforms
 from torch.utils.data import ConcatDataset
+from .base import *
 
 def csv2fasta(csv_path, data_path, data_name):
     path = csv_path
@@ -221,3 +223,56 @@ def open_exp(file, operator = 'log2'):
             result.append(item)
     f.close()
     return result
+
+def write_exp(file, data):
+    f = open(file,'w')
+    i = 0
+    while i < len(data):
+        f.write(str( np.round(data[i], 2)) + '\n')
+        i = i + 1
+    f.close()
+    return
+
+def dataset_shuffle(seqpath, exppath, savetag=False): 
+    seqs = open_fa(seqpath)
+    expr = open_exp(exppath, "direct")
+    idx = np.arange(len(seqs))
+    random.shuffle(idx)
+    
+    seqs = np.array(seqs)[idx]
+    expr = np.array(expr)[idx]
+    
+    if savetag:
+        seqpath_new = os.path.splitext(seqpath)[0] + "_shuffle.txt"
+        exppath_new = os.path.splitext(exppath)[0] + "_shuffle.txt"
+        write_seq(seqpath_new, seqs)
+        write_exp(exppath_new, expr)
+        print("The new shuffled file has been stored with _shuffle suffix\n")
+    
+    return seqs, expr
+
+def dataset_split(seqpath, exppath, ratio=0.8, savetag=False):
+    seqs = open_fa(seqpath)
+    expr = open_exp(exppath, "direct")
+    
+    total_length = len(seqs)
+    r = int(total_length * ratio)
+    
+    seqs_train = seqs[0:r]
+    expr_train = expr[0:r]
+    seqs_test = seqs[r:total_length]
+    expr_test = expr[r:total_length]
+    
+    if savetag:
+        seqpath_train_new = os.path.splitext(seqpath)[0] + "_train.txt"
+        exppath_train_new = os.path.splitext(exppath)[0] + "_train.txt"
+        seqpath_test_new = os.path.splitext(seqpath)[0] + "_test.txt"
+        exppath_test_new = os.path.splitext(exppath)[0] + "_test.txt"
+
+        write_seq(seqpath_train_new, seqs_train)
+        write_exp(exppath_train_new, expr_train)
+        write_seq(seqpath_test_new, seqs_test)
+        write_exp(exppath_test_new, expr_test)
+        print("The new shuffled file has been stored with _train and _test suffix\n")
+    
+    return seqs_train, seqs_test, expr_train, expr_test

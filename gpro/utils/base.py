@@ -117,4 +117,40 @@ def plot_weblogos(file, seqs, plot_mode="saliency"):
     print(' Weblogo saved to ' + plotnamefinal)
     plt.savefig(plotnamefinal)
     
+
+def data_check(datapath):
+    nt_map = ["A", "T", "C", "G"]
     
+    with open(datapath, 'r') as file:  
+        last_line = file.readlines()[-1]  
+    
+    # Step0: Enter Check
+    if (last_line.endswith('\n') == False):
+        print("Please add an enter in the last line\n")
+        return
+    
+    data = open_fa(datapath)
+    
+    # Step1: vocab detection
+    tmp_string = ''.join(data)
+    tmp_vocab = list(set(tmp_string))
+    
+    vocab_in_list = all(key in nt_map for key in tmp_vocab) 
+    vocab_ood = [x for x in tmp_vocab if x not in nt_map]
+    
+    if (len(tmp_vocab) > 4 or vocab_in_list==False):
+        print("Error character detection: ", vocab_ood)
+        print("Please check if your input file contains only the four bases A, T, C, and G\n")
+        return
+    
+    # Step2: alignment detection
+    if len(set(len(x) for x in data)) > 1:
+        indices = [i for i, x in enumerate(data) if len(x) not in {len(y) for y in data}] 
+        print("Error alignment detection: ", indices)
+        print("Please check if the line lengths of the input file are all equal\n")
+        return
+    
+    print("Your dataset is not problematic and suitable for training.\n")
+    return
+
+
