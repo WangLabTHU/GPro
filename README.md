@@ -12,7 +12,7 @@ Here, we introduce GPro (Generative approaches in promoter design), a user-frien
 Please view [wiki](https://github.com/WangLabTHU/Gpro_2023/wiki) for detailed guidance.
 
 ## Contents
-[Home](https://github.com/WangLabTHU/GPro/wiki)
+0. [Home](https://github.com/WangLabTHU/GPro/wiki)
 1. [Introduction](https://github.com/WangLabTHU/Gpro_2023/wiki/1.-Introduction)
 2. [Installation](https://github.com/WangLabTHU/Gpro_2023/wiki/2.-Installation)
 3. [Quick start](https://github.com/WangLabTHU/Gpro_2023/wiki/3.-Quick-start)
