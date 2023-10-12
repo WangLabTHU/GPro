@@ -10,7 +10,7 @@ from gpro.evaluator.kmer import plot_kmer_with_model, plot_kmer
 
 dataset_path = './datasets/sequence_data.txt'
 checkpoint_path = './checkpoints'
-model = WGAN_language(length=50, num_epochs=100, print_epoch = 1, save_epoch = 1)
+model = WGAN_language(length=50, num_epochs=12, print_epoch = 12, save_epoch = 12)
 model.train(dataset=dataset_path, savepath=checkpoint_path)
 
 ## Step 2
