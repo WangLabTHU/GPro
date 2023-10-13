@@ -6,7 +6,7 @@ The code for official implementation of "GPro: a toolbox for Generative approach
 ## Introduction
 Here, we introduce GPro (Generative approaches in promoter design), a user-friendly integrated platform that encompassing state-of-the-art generative promoter design methodologies. GPro standardizes the promoter design process into a fixed pipeline, allowing for the creating of synthetic promoters suitable by utilizing the prescribed sets of promoter sequences and gene expression data. Additionally, GPro offers comprehensive computational analysis reports, facilitate the assessments of the generated promoters across different dimensions of quality and functionality.
 
-![63](https://github.com/WangLabTHU/Gpro_2023/assets/66990292/0bff824b-c6cc-4c76-b43f-b41e91beb141)
+![63](https://github.com/WangLabTHU/GPro/assets/66990292/25e9ff52-42f0-4d28-8dc3-0e5b6be2d651)
 
 ## Installation and details
 Please view [wiki](https://github.com/WangLabTHU/Gpro_2023/wiki) for detailed guidance.
