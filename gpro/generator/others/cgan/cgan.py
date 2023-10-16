@@ -152,12 +152,13 @@ class WGAN():
         super(WGAN, self).__init__()
         self.gpu_ids = gpu_ids
         self.l1_w = l1_w
-        self.device = torch.device('cuda:{}'.format(self.gpu_ids[0])) if self.gpu_ids else torch.device('cpu')
+        self.device = torch.device('cuda:{}'.format(self.gpu_ids[0])) if torch.cuda.is_available() else torch.device('cpu')
         self.generator = Generator(input_nc, output_nc, seqL=seqL)
         self.discriminator = Discriminator(input_nc + output_nc, seqL=seqL)
-        if len(gpu_ids) > 0:
-            self.generator = self.generator.cuda()
-            self.discriminator = self.discriminator.cuda()
+        
+        self.generator = self.generator.to(self.device)
+        self.discriminator = self.discriminator.to(self.device)
+        
         self.l1_loss = torch.nn.L1Loss()
         self.optim_g = torch.optim.Adam(self.generator.parameters(), lr=lr, betas=(0.5, 0.9))
         self.optim_d = torch.optim.Adam(self.discriminator.parameters(), lr=lr, betas=(0.5, 0.9))
@@ -233,7 +234,7 @@ class Deepseed:
                     mask_i[:, j] = np.ones([4, 1])[:, 0]
             self.masks.append(mask_i)
         self.input_seqs = np.array(self.input_seqs)
-        self.input_tensor = torch.FloatTensor(self.input_seqs).cuda()
+        self.input_tensor = (torch.FloatTensor(self.input_seqs)).to(self.device)
         self.i = 0
 
 

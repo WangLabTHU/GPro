@@ -59,10 +59,8 @@ class LoadData(Dataset):
 
     def __getitem__(self, item):
         in_seq, label_seq = transforms.ToTensor()(self.input_seq[item]), transforms.ToTensor()(self.storage[item]) # [1,4,165]
-        if len(self.gpu_ids) > 0:
-            return {'in': in_seq[0, :].float().cuda(), 'out': squeeze(label_seq).float().cuda()}
-        else:
-            return {'in': in_seq[0, :].float(), 'out': squeeze(label_seq).float()}
+        device = torch.device('cuda:{}'.format(self.gpu_ids[0])) if torch.cuda.is_available() else torch.device('cpu')
+        return {'in': in_seq[0, :].float().to(device), 'out': squeeze(label_seq).float().to(device)}
 
     def __len__(self):
         return len(self.storage)

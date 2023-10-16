@@ -52,7 +52,9 @@ def padding(data):
         pad = torch.tensor([[0,0,0,0]] * (max_len - item.shape[0]))
         new_item = torch.cat((item, pad), 0)
         new_data.append(new_item)
-    new_data = torch.tensor([item.cpu().detach().numpy() for item in new_data]).cuda()
+    new_data = torch.tensor([item.cpu().detach().numpy() for item in new_data])
+    device, = [torch.device("cuda" if torch.cuda.is_available() else "cpu"), ]
+    new_data = new_data.to(device)
     return new_data
             
 

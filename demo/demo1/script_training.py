@@ -25,8 +25,8 @@ print("Scaler Params: ", scaler.getvalue())
 
 model = AttnBilstm_language(length=110, epoch=200, exp_mode="direct", patience = 200)
 
-dataset = "./datasets/tmp_seq.txt"
-labels = './datasets/tmp_exp.txt'
+dataset = "./datasets/train_seq.txt"
+labels = './datasets/train_exp.txt'
 
 save_path = './checkpoints/'
 model.train(dataset=dataset,labels=labels,savepath=save_path)
