@@ -28,7 +28,7 @@ model = AttnBilstm_language(length=1000, epoch=200, exp_mode="direct", patience 
 
 dataset = './datasets/train_seq.txt'
 labels = './datasets/train_exp.txt'
-save_path = './datasets/checkpoints/'
+save_path = './checkpoints/'
 model.train(dataset=dataset,labels=labels,savepath=save_path)
 
 predictor_modelpath = "./checkpoints/attnbilstm/checkpoint.pth"

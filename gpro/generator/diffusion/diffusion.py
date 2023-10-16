@@ -36,6 +36,7 @@ class DiffusionExperiment(BaseExperiment):
                  transformer_local_size = 25,
                  gamma = 0.99,
                  model_name = "diffusion",
+                 num_workers = 4,
                  
                  dataset = None, # Flexiable parts
                  savepath = None,
@@ -48,7 +49,7 @@ class DiffusionExperiment(BaseExperiment):
         ## Part 1: experiment parameters
         self.epochs = epochs
         self.seed = 0
-        self.device = 'cuda'
+        self.device, = [torch.device("cuda" if torch.cuda.is_available() else "cpu"), ]
         self.name = model_name
         self.project = None
         self.eval_every = eval_every
@@ -61,7 +62,7 @@ class DiffusionExperiment(BaseExperiment):
         self.validation = True
         self.batch_size = batch_size
         self.seq_len = length
-        self.num_workers = 4
+        self.num_workers = num_workers
         
         ## Part3: Model parameters
         self.transformer_dim = 512

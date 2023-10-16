@@ -35,6 +35,6 @@ plot_kmer_with_model(generator, generator_modelpath,  generator_training_datapat
 ## Step 4
 
 generator_training_datapath = './datasets/sequence_data.txt'
-generator_sampling_datapath = './checkpoints/wgan/samples/sample_0.txt' 
+generator_sampling_datapath = './checkpoints/wgan/samples/sample_ep12_s0_num_10000.txt' 
 plot_kmer(generator_training_datapath, generator_sampling_datapath, report_path="./results/", file_tag="WGAN_02")
 
