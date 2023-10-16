@@ -1,11 +1,5 @@
-import os, sys
-import csv, h5py
-import math
-import torch
 import numpy as np
 import pandas as pd
-from tqdm import tqdm
-from torch.utils.data import DataLoader, Dataset
 from scipy.stats import pearsonr
 
 import warnings
@@ -164,9 +158,3 @@ plt.savefig("./results/%s.pdf" % (fig_file,), bbox_inches="tight")
 plt.savefig("./results/%s.png" % (fig_file,), bbox_inches="tight")
 
 plt.show()
-
-
-
-
-
-
