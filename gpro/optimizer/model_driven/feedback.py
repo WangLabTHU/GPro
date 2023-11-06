@@ -65,8 +65,8 @@ class Feedback():
         
         vmin = min(min(self.Pred_nat), min(self.Pred))
         vmax = max(max(self.Pred_nat), max(self.Pred))
-        sns.histplot(self.Pred_nat, label='natural', alpha = 0.75, kde=True, bins=30, binrange=(vmin,vmax))
-        sns.histplot(self.Pred, label='model-guided', alpha = 0.75, kde=True, bins=30, binrange=(vmin,vmax))
+        sns.histplot(self.Pred_nat, label='natural', alpha = 0.75, kde=True, bins=30, binrange=(vmin,vmax), color="tab:blue")
+        sns.histplot(self.Pred, label='model-guided', alpha = 0.75, kde=True, bins=30, binrange=(vmin,vmax), color="tab:orange")
 
         ax.set_xlabel('Predicts', fontsize=10)
         ax.spines['left'].set_visible(True)

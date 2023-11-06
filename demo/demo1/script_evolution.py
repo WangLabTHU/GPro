@@ -5,13 +5,15 @@ predictor = AttnBilstm_language(length=110)
 predictor_modelpath = "./checkpoints/attnbilstm/checkpoint.pth"
 natural_datapath = "./datasets/Random_testdata_complex_media_seq.txt"
 
-tmp = SSWM(predictor=predictor, predictor_modelpath=predictor_modelpath,
-           natural_datapath=natural_datapath, savepath="./results/SSWM")
-
 left_flank = ''.join(['T','G','C','A','T','T','T','T','T','T','T','C','A','C','A','T','C'])
 right_flank = ''.join(['G','G','T','T','A','C','G','G','C','T','G','T','T'] )
 
+tmp = SSWM(predictor=predictor, predictor_modelpath=predictor_modelpath,
+           natural_datapath=natural_datapath, savepath="./results/SSWM")
 tmp.run(MaxIter=10, flanking=[left_flank, right_flank], mode="max")
+
+tmp = SSWM(predictor=predictor, predictor_modelpath=predictor_modelpath,
+           natural_datapath=natural_datapath, savepath="./results/SSWM")
 tmp.run(MaxIter=10, flanking=[left_flank, right_flank], mode="min")
 
 
