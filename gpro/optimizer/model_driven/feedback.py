@@ -109,6 +109,19 @@ class Feedback():
         plt.savefig(plot_path)
         return
     
+    def unique_list(self, seq, exp):
+        unique_dict = {}
+        unique_seq = []
+        unique_exp = []
+
+        for item, value in zip(seq, exp):
+            if item not in unique_dict:
+                unique_dict[item] = value
+                unique_seq.append(item)
+                unique_exp.append(value)
+
+        return unique_seq, unique_exp
+    
     def run(self,
             MaxIter = 20, # 200
             MaxEpoch = 50, # 500
@@ -164,6 +177,10 @@ class Feedback():
 
             seqs_res = list(self.Seqs[0:-MaxPoolsize]) + list(seqs_list[0:MaxPoolsize])
             pred_res = list(self.Pred[0:-MaxPoolsize]) + list(pred_list[0:MaxPoolsize])
+            seqs_res, pred_res = self.unique_list(seqs_res, pred_res)
+            bias = len(self.Seqs) - len(seqs_res)
+            seqs_res = list(seqs_res) + list(seqs_list[MaxPoolsize:MaxPoolsize+bias])
+            pred_res = list(pred_res) + list(pred_list[MaxPoolsize:MaxPoolsize+bias])
 
             print("Optimized predicted Expression Level: {}->{}".format(np.mean(self.Pred), np.mean(pred_res)))
             self.Seqs = seqs_res
