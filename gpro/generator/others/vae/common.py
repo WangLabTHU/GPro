@@ -42,6 +42,12 @@ def seq2onehot(seq):
         onehot.append(tmp)
     return np.array(onehot)
 
+def sequence2fa(sequence, file_name):
+    with open(file_name, 'w') as f:
+        for item in sequence:
+            f.write('>' + '\n')
+            f.write(item + '\n')
+
 class Seq_loader(Dataset):
 
     def __init__(self, seq_file, seq_len = 80):
