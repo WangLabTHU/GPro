@@ -231,7 +231,7 @@ class SimpleVAE:
         sample_text = model.sample(sample_number)
         
         if (self.sample_output):
-            path_samples = os.path.join(self.sample_model_dir, 'samples/sample.txt')
+            path_samples = os.path.join(self.sample_model_dir, 'samples/sample_{}.txt'.format(seed))
             if not os.path.exists(os.path.dirname(path_samples)):
                 os.mkdir(os.path.dirname(path_samples))
             print("samples will be saved in: ", path_samples)
