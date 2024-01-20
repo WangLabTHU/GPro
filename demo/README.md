@@ -51,3 +51,13 @@ Demo5: conditional GAN
 
 We have reproduced figure 2c from: https://www.biorxiv.org/content/10.1101/2023.04.14.536502v1
 
+
+***Targeted design of synthetic enhancers for selected tissues in the Drosophila embryo***
+
+We have reproduced the Extended Data Fig. 1b and Extended Data Fig. 3b
+
+datasets are obtained from https://zenodo.org/records/8011697
+
+Due to the large size of the dataset, we have only provided the most necessary data. For detailed information, please download it from Zonedo and refer to the data processing method under '/data'.
+
+We have provided all needed checkpoints for this demo, and annotated out all the training steps. You can directly reproduce the codes from our pretrained models.
