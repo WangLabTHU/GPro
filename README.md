@@ -19,6 +19,8 @@ Please view [wiki](https://github.com/WangLabTHU/Gpro_2023/wiki) for detailed gu
 4. [Functions](https://github.com/WangLabTHU/Gpro_2023/wiki/4.-Functions)  
 5. [Demos](https://github.com/WangLabTHU/Gpro_2023/wiki/5.-Demos)
 6. [Session Information](https://github.com/WangLabTHU/Gpro_2023/wiki/6.-Session-Information)
+7. [Default Datasets](https://github.com/WangLabTHU/GPro/wiki/7.-Datasets)
+8. [Model Comparisons](https://github.com/WangLabTHU/GPro/wiki/8.-Model-Comparisons)
 
 
 ## License
