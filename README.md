@@ -21,6 +21,7 @@ Please view [wiki](https://github.com/WangLabTHU/Gpro_2023/wiki) for detailed gu
 6. [Session Information](https://github.com/WangLabTHU/Gpro_2023/wiki/6.-Session-Information)
 7. [Default Datasets](https://github.com/WangLabTHU/GPro/wiki/7.-Datasets)
 8. [Model Comparisons](https://github.com/WangLabTHU/GPro/wiki/8.-Model-Comparisons)
+9. [Customization](https://github.com/WangLabTHU/GPro/wiki/9.-Customization)
 
 
 ## License
