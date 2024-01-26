@@ -56,6 +56,18 @@ print("ad_mean_Y: {}, ad_std:{}, ad_r2:{}, ad_pearson:{}, ad_spearman:{} \n".for
 #                        transfer=True, modelpath=model_path)
 
 
+#####################################################
+####   Training Activity Model: Random Initial   ####
+#####################################################
+
+# model = DeepSTARR2_binary_language(length=1001, epoch=200, patience=20, model_name="deepstarr2_random")
+# train_dataset = "./datasets/EnhancerActivity_models_training_data/Train_seq.txt"
+# train_labels  = "./datasets/EnhancerActivity_models_training_data/Train_exp_epidermis.txt"
+# valid_dataset = "./datasets/EnhancerActivity_models_training_data/Val_seq.txt"
+# valid_labels = "./datasets/EnhancerActivity_models_training_data/Val_exp_epidermis.txt"
+# save_path = "./checkpoints/"
+# model.train_with_valid(train_dataset=train_dataset,train_labels=train_labels,valid_dataset=valid_dataset, valid_labels=valid_labels, savepath=save_path)
+
 #######################################################
 ####   Testing Activity Model: Transfer Learning   ####
 #######################################################
