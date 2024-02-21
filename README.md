@@ -1,4 +1,4 @@
-![Figure 1](https://github.com/WangLabTHU/GPro/assets/66990292/cb1a99d5-487f-4cca-8a49-494110d1bace)# GPro: a toolbox for Generative approaches in promoter design
+# GPro: a toolbox for Generative approaches in promoter design
 
 ## 
 The code for official implementation of "GPro: a toolbox for Generative approaches in promoter design", Created by Haochen Wang and Qixiu Du from Wanglab@THU
