@@ -1,7 +1,7 @@
 # GPro: a toolbox for Generative approaches in promoter design
 
 ## 
-The code for official implementation of ["GPro: a toolbox for Generative approaches in promoter design"](https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btae123/7617687), Created by Haochen Wang and Qixiu Du from Wanglab@THU
+The code for official implementation of [GPro: a toolbox for Generative approaches in promoter design](https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btae123/7617687), Created by Haochen Wang and Qixiu Du from Wanglab@THU
 
 ## Introduction
 Here, we introduce GPro (Generative approaches in promoter design), a user-friendly integrated platform that encompassing state-of-the-art generative promoter design methodologies. GPro standardizes the promoter design process into a fixed pipeline, allowing for the creating of synthetic promoters suitable by utilizing the prescribed sets of promoter sequences and gene expression data. Additionally, GPro offers comprehensive computational analysis reports, facilitate the assessments of the generated promoters across different dimensions of quality and functionality.
